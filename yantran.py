@@ -33,7 +33,7 @@ class yantranslator(object):
         language_pairing = '&lang={}-{}'.format(from_lang,to_lang)
         url = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key='
         text = '&text={}'.format(sentence)
-        formatting = '&fomat={}'.format(formatting)
+        formatting = '&format={}'.format(formatting)
         r = requests.get('{}{}{}{}{}'.format(url,self.api_key,language_pairing,text,formatting))
         data = json.loads(r.text)
         result = data['text'][0:]
@@ -43,9 +43,10 @@ class yantranslator(object):
     def auto_tran(self,to_lang,sentence,formatting='plain'):
         url = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key='
         language = '&lang={}'.format(to_lang)
-        options = '&option=1'
+        options = '&options=1'
+        formatting = '&format={}'.format(formatting)
         text = '&text={}'.format(sentence)
-        r = requests.get('{}{}{}{}{}'.format(url,self.api_key,text,language,options))
+        r = requests.get('{}{}{}{}{}{}'.format(url,self.api_key,text,language,formatting,options))
         data = json.loads(r.text)
         result = data['text'][0:]
         result = ''.join(result)
