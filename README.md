@@ -70,3 +70,7 @@ for language_pairing in what_can_this_translate:
 >> etc....
 ```
 
+### Why Yandex?
+Google charges people to use Translate API, it is increadibly cheap working out at about $0.05 per page of text. But what's better than very cheap - FREE. Yandex's Translation API is absolutely free to use, provided a link and statement saying that your product is powered by the Yandex Translate API. You can find out more and get your free Yandex API key [here](https://tech.yandex.com/translate/).
+
+Additionally, the Yandex translate service is superior across a decent number of language pairs. Languages such as Russian, Ukrainian and Belarusian are much better supported by Yandex. 
