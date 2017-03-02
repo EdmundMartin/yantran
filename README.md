@@ -4,9 +4,9 @@ Yantran is a Python 3 wrapper for Yandex's translate API. Yantran sits on top of
 ## Example Usage
 ### Indentify a Language
 ```python
-from yantran import yantranslator
+from yantran import Yantranslator
 
-translator = yantranslator('SUPER_SECRET_API_KEY')
+translator = Yantranslator('SUPER_SECRET_API_KEY')
 what_language = translator.indentify_language('Привет всем, меня зовут Эдмунд')
 print(what_language)
 >> ru
@@ -15,9 +15,9 @@ The Yandex Translate API allows users to indentify a language with users simply 
 
 It is also possible to provide Yandex with hints regarding the inputted language. Yantran supports this functionality and the example below outlines how this is done using Yantran.
 ```python
-from yantran import yantranslator
+from yantran import Yantranslator
 
-translator = yantranslator('SUPER_SECRET_API_KEY')
+translator = Yantranslator('SUPER_SECRET_API_KEY')
 what_language = translator.indentify_language('Привет всем, меня зовут Эдмунд','en,ru,uk,kz')
 print(what_language)
 >> ru
@@ -25,9 +25,9 @@ print(what_language)
 In the above example the user has included four 'hint languages'. Yantran returns the most likely language as a string.
 ### Translating a sentence
 ```python
-from yantran import yantranslator
+from yantran import Yantranslator
 
-translator = yantranslator('SUPER_SECRET_API_KEY')
+translator = Yantranslator('SUPER_SECRET_API_KEY')
 what_does_this_mean = translator.tran_sentence('ru','en','Почему ты смотришь на меня?')
 print(what_does_this_mean)
 >> Why are you looking at me?
@@ -36,18 +36,18 @@ The above example see's a user translating a sentence from a known language into
 
 Additionally, Yantran supports html input - allowing users to translate content contained within HTML. This is down by changing the optional argument to 'html' as outlined in the example below.
 ```python
-from yantran import yantranslator
+from yantran import Yantranslator
 
-translator = yantranslator('SUPER_SECRET_API_KEY')
+translator = Yantranslator('SUPER_SECRET_API_KEY')
 what_does_this_mean = translator.tran_sentence('ru','en','<h1>Почему ты смотришь на меня?</h1>','html')
 print(what_does_this_mean)
 >> <h1>Why are you looking at me?</h1>
 ```
 ### Automatic Translation of a sentence
 ```python
-from yantran import yantranslator
+from yantran import Yantranslator
 
-translator = yantranslator('SUPER_SECRET_API_KEY')
+translator = Yantranslator('SUPER_SECRET_API_KEY')
 what_does_this_mean = translator.auto_tran('en','Почему ты смотришь на меня?')
 print(what_does_this_mean)
 >> Why are you looking at me?
@@ -57,9 +57,9 @@ Yantran also supports automatic translation of sentences. The function takes tar
 ### List of Supported Language Pairings
 Yantran also allows users to check all the pairings which are currently supported by Yandex Translate. This function returns a list. An example usage can be found below.
 ```python
-from yantran import yantranslator
+from yantran import Yantranslator
 
-translator = yantranslator('SUPER_SECRET_API_KEY')
+translator = Yantranslator('SUPER_SECRET_API_KEY')
 what_can_this_translate = translator.supported_langs()
 for language_pairing in what_can_this_translate:
     if 'ru' in language_pairing:
